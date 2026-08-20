@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b2j54aihr0i17"]
+
+[ext_resource type="Texture2D" uid="uid://dopa84k2xxiu6" path="res://assets/kenney_space-shooter-remastered/PNG/playerShip1_red.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bskk86tcn1gls" path="res://scenes/player.gd" id="1_g2els"]
+
+[node name="Player" type="CharacterBody2D" unique_id=959710428]
+collision_mask = 6
+script = ExtResource("1_g2els")
+
+[node name="PlayerImage" type="Sprite2D" parent="." unique_id=390030228]
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1387106537]
+polygon = PackedVector2Array(-8, -37, 7, -37, 11, -12, 35, 3, 40, 0, 45, -6, 49, -6, 46, 24, 42, 19, 35, 22, 14, 26, 7, 37, -8, 37, -13, 27, -36, 23, -41, 19, -45, 24, -49, -5, -44, -6, -42, -1, -36, 2, -13, -11)
+
+[node name="LaserStartPosition" type="Marker2D" parent="." unique_id=530478106]
+position = Vector2(0, -55)
