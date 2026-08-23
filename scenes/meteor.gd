@@ -43,7 +43,7 @@ func _on_area_entered(area: Area2D) -> void:
 		print(score)
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	animated_sprite.show()
 	$MeteorImage.hide()
 	speed = 0

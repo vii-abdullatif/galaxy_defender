@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Global="*uid://bxdk4ixc14vtv"
+LiveCounter="*uid://dpknsd2wbfiqn"
 
 [display]
 

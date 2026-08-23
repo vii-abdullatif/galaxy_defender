@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bgr4escqoojv4" path="res://assets/kenney_space-shooter-remastered/PNG/Effects/star2.png" id="5_8c41q"]
 [ext_resource type="Texture2D" uid="uid://pnj2tqkowadh" path="res://assets/kenney_space-shooter-remastered/PNG/Effects/star3.png" id="6_olg7q"]
 [ext_resource type="PackedScene" uid="uid://becmbd7jrn4o6" path="res://scenes/UI/score_indicator.tscn" id="7_klq6b"]
+[ext_resource type="PackedScene" uid="uid://dn6d37ldbeuud" path="res://scenes/UI/lives.tscn" id="8_b121j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1rx8"]
 animations = [{
@@ -185,6 +186,8 @@ autostart = true
 offset_left = 14.0
 offset_right = 150.0
 offset_bottom = 72.0
+
+[node name="Lives" parent="." unique_id=1602313721 instance=ExtResource("8_b121j")]
 
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
