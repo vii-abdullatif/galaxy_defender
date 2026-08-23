@@ -25,6 +25,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += Vector2(direction_x, 1.0) * speed * delta
 	rotation_degrees += rotation_speed * delta
+	speed += 10 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "collided":
