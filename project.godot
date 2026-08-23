@@ -15,6 +15,10 @@ run/main_scene="uid://buwqbocgny4c6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+Global="*uid://bxdk4ixc14vtv"
+
 [display]
 
 window/size/viewport_width=1280
@@ -36,6 +40,7 @@ folder_colors={
 
 meteors=""
 player=""
+laser=""
 
 [input]
 

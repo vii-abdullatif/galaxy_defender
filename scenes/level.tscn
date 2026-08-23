@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://1a3ul8ro82c6" path="res://assets/kenney_space-shooter-remastered/PNG/Effects/star1.png" id="4_b121j"]
 [ext_resource type="Texture2D" uid="uid://bgr4escqoojv4" path="res://assets/kenney_space-shooter-remastered/PNG/Effects/star2.png" id="5_8c41q"]
 [ext_resource type="Texture2D" uid="uid://pnj2tqkowadh" path="res://assets/kenney_space-shooter-remastered/PNG/Effects/star3.png" id="6_olg7q"]
+[ext_resource type="PackedScene" uid="uid://becmbd7jrn4o6" path="res://scenes/UI/score_indicator.tscn" id="7_klq6b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1rx8"]
 animations = [{
@@ -179,6 +180,11 @@ autostart = true
 [node name="Meteors" type="Node2D" parent="." unique_id=423462369 groups=["meteors"]]
 
 [node name="Lasers" type="Node2D" parent="." unique_id=1353494908]
+
+[node name="ScoreIndicator" parent="." unique_id=439836817 instance=ExtResource("7_klq6b")]
+offset_left = 14.0
+offset_right = 150.0
+offset_bottom = 72.0
 
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]

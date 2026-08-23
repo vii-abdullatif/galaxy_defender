@@ -7,6 +7,7 @@ var speed : int
 var rotation_speed : int
 var direction_x : float
 var animation_finsihed = false
+var score := 0
 
 func _ready() -> void:
 	var rng := RandomNumberGenerator.new()
@@ -25,6 +26,23 @@ func _process(delta: float) -> void:
 	position += Vector2(direction_x, 1.0) * speed * delta
 	rotation_degrees += rotation_speed * delta
 
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "collided":
+		queue_free()
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("laser"):
+		animated_sprite.show()
+		$MeteorImage.hide()
+		speed = 0
+		rotation_speed = 0
+		$CollisionShape2D.set_deferred("disabled", true)
+		animated_sprite.play("collided")
+		Global.score += 1
+		score = Global.score
+		print(score)
+
+
 func _on_body_entered(body: Node2D) -> void:
 	animated_sprite.show()
 	$MeteorImage.hide()
@@ -32,7 +50,3 @@ func _on_body_entered(body: Node2D) -> void:
 	rotation_speed = 0
 	$CollisionShape2D.set_deferred("disabled", true)
 	animated_sprite.play("collided")
-
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite.animation == "collided":
-		queue_free()
