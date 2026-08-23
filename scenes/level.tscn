@@ -176,7 +176,7 @@ shape = SubResource("RectangleShape2D_mx8sn")
 wait_time = 0.2
 autostart = true
 
-[node name="Meteors" type="Node2D" parent="." unique_id=423462369]
+[node name="Meteors" type="Node2D" parent="." unique_id=423462369 groups=["meteors"]]
 
 [node name="Lasers" type="Node2D" parent="." unique_id=1353494908]
 

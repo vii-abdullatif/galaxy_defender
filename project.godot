@@ -32,6 +32,11 @@ folder_colors={
 "res://scenes/": "blue"
 }
 
+[global_group]
+
+meteors=""
+player=""
+
 [input]
 
 shoot={

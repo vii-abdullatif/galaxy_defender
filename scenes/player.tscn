@@ -15,3 +15,11 @@ polygon = PackedVector2Array(-8, -37, 7, -37, 11, -12, 35, 3, 40, 0, 45, -6, 49,
 
 [node name="LaserStartPosition" type="Marker2D" parent="." unique_id=530478106]
 position = Vector2(0, -55)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1344340664 groups=["player"]]
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1436758132]
+polygon = PackedVector2Array(-8, -37, 7, -37, 11, -12, 35, 3, 40, 0, 45, -6, 49, -6, 46, 24, 42, 19, 35, 22, 14, 26, 7, 37, -8, 37, -13, 27, -36, 23, -41, 19, -45, 24, -49, -5, -44, -6, -42, -1, -36, 2, -13, -11)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

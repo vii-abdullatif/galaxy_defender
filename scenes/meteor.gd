@@ -1,8 +1,12 @@
 extends Area2D
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+
 var speed : int
 var rotation_speed : int
 var direction_x : float
+var animation_finsihed = false
 
 func _ready() -> void:
 	var rng := RandomNumberGenerator.new()
@@ -15,10 +19,20 @@ func _ready() -> void:
 	speed = rng.randi_range(400, 600)
 	rotation_speed = rng.randi_range(20, 100)
 	direction_x = rng.randf_range(-1, 1)
+	animated_sprite.hide()
 
 func _process(delta: float) -> void:
 	position += Vector2(direction_x, 1.0) * speed * delta
 	rotation_degrees += rotation_speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	print(body)
+	animated_sprite.show()
+	$MeteorImage.hide()
+	speed = 0
+	rotation_speed = 0
+	$CollisionShape2D.set_deferred("disabled", true)
+	animated_sprite.play("collided")
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "collided":
+		queue_free()
